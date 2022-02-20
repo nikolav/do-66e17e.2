@@ -9,14 +9,17 @@ const cors = require("cors");
 
 var app = express();
 
-// app.use(logger('dev'));
-app.use(logger("combined"));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.resolve(__dirname, "public")));
-app.use(cors());
+app.use((req, res, next) => {
+  return res.send("howdy");
+});
 
+// app.use(logger('dev'));
+// app.use(logger("combined"));
+// app.use(express.json());
+// app.use(express.urlencoded({ extended: false }));
+// app.use(cookieParser());
+// app.use(express.static(path.resolve(__dirname, "public")));
+// app.use(cors());
 
 // app.use('/', indexRouter);
 // app.use('/users', usersRouter);
